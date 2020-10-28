@@ -1,0 +1,17 @@
+{
+  "id": 5,
+  "name": "De Tasty Hot Pot",
+  "category": ["Hot Pot", "Dim Sum", "Seafood"],
+  "open_time": "10:00AM",
+  "close_time": "10:00PM",
+  "rating": 3.5,
+  "photo": "https://www.ihstattler.com/wp/wp-content/uploads/2017/09/IMG_2210-640x476.png",
+  "address": "422 Eddy St",
+  "phone_number": "(607) 821-2312",
+  "reviews": [
+    "Their Chinese food is the best in Ithaca in my opinion!",
+    "I came here a while ago, but this place has the most authentic Chinese food in Collegetown.",
+    "This was probably my favorite place to eat in Collegetown, or even Ithaca for that matter.",
+    "The dishes are a bit pricey, but not much of a surprise there, since it is collegetown. There's lunch specials though. Monday to Friday."
+  ]
+}

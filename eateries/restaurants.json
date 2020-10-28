@@ -1,0 +1,84 @@
+{
+  "restaurants": [
+    {
+      "name": "Apollo Restaurant",
+      "category": ["Chinese"],
+      "open_time": "10:00AM",
+      "close_time": "11:00PM",
+      "rating": 3,
+      "photo": "https://www.visitithaca.com/sites/default/files/styles/max_300/public/2020-07/943-1_086b799d-5056-a36a-095e462f34fa9ba5.jpg?itok=ACSbKhrm"
+    },
+    {
+      "name": "Asian Noodle House",
+      "category": ["Chinese", "Thai", "Noodles"],
+      "open_time": "10:00AM",
+      "close_time": "9:00PM",
+      "rating": 3,
+      "photo": "https://s3-media0.fl.yelpcdn.com/bphoto/S2yWsAjQCIk8GZEjS2ZbKg/348s.jpg"
+    },
+    {
+      "name": "Chatty Cathy Coffee & Juice Press",
+      "category": ["Coffee & Tea", "Juice Bars & Smoothies", "Acai Bowls"],
+      "open_time": "8:00AM",
+      "close_time": "4:00PM",
+      "rating": 4.5,
+      "photo": "https://s3-media0.fl.yelpcdn.com/bphoto/fPPC6xaIeactDmuSmvTN3w/l.jpg"
+    },
+    {
+      "name": "College Town Pizza",
+      "category": ["Pizza"],
+      "open_time": "1:00PM",
+      "close_time": "12:00AM",
+      "rating": 2.5,
+      "photo": "https://i2.wp.com/cornellsun.com/wp-content/uploads/2018/02/NINES-A.jpg?fit=1170%2C779co"
+    },
+    {
+      "name": "Collegetown Bagels",
+      "category": ["Bagels", "Sandwiches", "Coffee & Tea"],
+      "open_time": "6:00AM",
+      "close_time": "10:00PM",
+      "rating": 4,
+      "photo": "https://bloximages.chicago2.vip.townnews.com/ithaca.com/content/tncms/assets/v3/editorial/b/7c/b7cf83a8-d4aa-11e9-b291-af739bda99cc/5d7916110d015.image.jpg?crop=1567%2C1175%2C98%2C0&resize=1567%2C1175&order=crop%2Cresize"
+    },
+    {
+      "name": "De Tasty Hot Pot",
+      "category": ["Hot Pot", "Dim Sum", "Seafood"],
+      "open_time": "10:00AM",
+      "close_time": "10:00PM",
+      "rating": 3.5,
+      "photo": "https://www.ihstattler.com/wp/wp-content/uploads/2017/09/IMG_2210-640x476.png"
+    },
+    {
+      "name": "Four Seasons",
+      "category": ["Korean"],
+      "open_time": "12:00PM",
+      "close_time": "10:00PM",
+      "rating": 3,
+      "photo": "https://www.visitithaca.com/sites/default/files/styles/max_300/public/2020-07/959-1_08780c85-5056-a36a-090ceb2411d9eecd.jpg?itok=4J5RS0EW"
+    },
+    {
+      "name": "Jack's Grill",
+      "category": ["Burgers", "Sports Bars", "Breakfast & Brunch"],
+      "open_time": "10:00AM",
+      "close_time": "11:00PM",
+      "rating": 2.5,
+      "photo": "https://s3-media0.fl.yelpcdn.com/bphoto/4zumZ65UcKCyLD2TJPUk-g/l.jpg"
+    },
+    {
+      "name": "Little Thai House",
+      "category": ["Thai"],
+      "open_time": "3:00AM",
+      "close_time": "10:00PM",
+      "rating": 3.5,
+      "photo": "https://cdn.usarestaurants.info/assets/uploads/f5cc59efc4488e345c7f9376bc073989_-united-states-new-york-tompkins-county-ithaca-little-thai-house-607-273-1977htm.jpg"
+    },
+    {
+      "name": "Oishii Bowl",
+      "category": ["Japanese"],
+      "open_time": "11:00PM",
+      "close_time": "10:00PM",
+      "rating": 3,
+      "photo": "https://cdn.usarestaurants.info/assets/uploads/d5e04830231db3617ee61409298ac168_-united-states-new-york-tompkins-county-ithaca-oishii-bowl-607-319-4119htm.jpg"
+    }
+  ]
+}

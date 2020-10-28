@@ -1,0 +1,17 @@
+{
+  "id": 6,
+  "name": "Four Seasons",
+  "category": ["Korean"],
+  "open_time": "12:00PM",
+  "close_time": "10:00PM",
+  "rating": 3,
+  "photo": "https://www.visitithaca.com/sites/default/files/styles/max_300/public/2020-07/959-1_08780c85-5056-a36a-090ceb2411d9eecd.jpg?itok=4J5RS0EW",
+  "address": "404 Eddy St",
+  "phone_number": "(607) 277-1117",
+  "reviews": [
+    "Depends on what you order. My personal favorites are je yook bok um and squid fried rice.",
+    "Not very crowded for a Friday night. Our server was very attentive and kept checking in how we were doing.",
+    "The salmon was good sized and cooked to perfection. It had a tasty seasoning but not so much as to overpower the fish. The vegetables had a nice Brown sugar like glaze that also was not overpowering and added a good flavor to them as well.",
+    "A to go place if you're craving for Korean food when you're in upstate New York. We ordered the sea food hotpot, Korean bbq- beef short ribs and bogogi."
+  ]
+}

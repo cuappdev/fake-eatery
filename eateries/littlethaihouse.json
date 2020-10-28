@@ -1,0 +1,18 @@
+{
+  "id": 8,
+  "name": "Little Thai House",
+  "category": ["Thai"],
+  "open_time": "3:00AM",
+  "close_time": "10:00PM",
+  "rating": 3.5,
+  "photo": "https://cdn.usarestaurants.info/assets/uploads/f5cc59efc4488e345c7f9376bc073989_-united-states-new-york-tompkins-county-ithaca-little-thai-house-607-273-1977htm.jpg",
+  "address": "202 Dryden Ct",
+  "phone_number": "(607) 273-1977",
+  "reviews": [
+    "Every restaurants have their target groups. If you are looking for a nice, fancy restaurant or want to experience a real, authentic Thai food, this is not a place to go to.",
+    "Stir fry veggies and Chinese BBQ pork w/ a lot of rice for dinner. Flavors are good, but the texture needs improvement.",
+    "The good thing about it was that the portion sizes were very large and it was at an affordable price. It's good for starving college kids on a budget.",
+    "Best value in collegetown for a lot of food, a decent variety of vegetables, meat, and soup slathered in flavor.",
+    "Food is bad compared to the Thai in town, but it was palatable enough. "
+  ]
+}

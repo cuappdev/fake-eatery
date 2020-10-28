@@ -1,0 +1,18 @@
+{
+  "id": 1,
+  "name": "Asian Noodle House",
+  "category": ["Chinese", "Thai", "Noodles"],
+  "open_time": "10:00AM",
+  "close_time": "9:00PM",
+  "rating": 3,
+  "photo": "https://s3-media0.fl.yelpcdn.com/bphoto/S2yWsAjQCIk8GZEjS2ZbKg/348s.jpg",
+  "address": "204 Dryden Road",
+  "phone_number": "(607) 272-9106",
+  "reviews": [
+    "Hands down some of the WORST food I've ever had. My partner and I ordered six dishes and half of them were okay at best.",
+    "Great place for casual eating. Very cheap and fast. Also Thai Tea fit with any of food in the restaurant",
+    "Passable spicy Basil fried rice, though you'll be much better off going downtown to the Thai Basil place.",
+    "Lemon grass chicken was one of the best in town. Noodles are fabulous, definitely of my taste. Atmosphere was good. Service better than most other shops in town.",
+    "This restaurant has one of the worst spicy basil noodles that I have ever eaten. The flavor is bland. "
+  ]
+}

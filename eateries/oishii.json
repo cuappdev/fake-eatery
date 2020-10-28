@@ -1,0 +1,18 @@
+{
+  "id": 9,
+  "name": "Oishii Bowl",
+  "category": ["Japanese"],
+  "open_time": "11:00PM",
+  "close_time": "10:00PM",
+  "rating": 3,
+  "photo": "https://cdn.usarestaurants.info/assets/uploads/d5e04830231db3617ee61409298ac168_-united-states-new-york-tompkins-county-ithaca-oishii-bowl-607-319-4119htm.jpg",
+  "address": "401 College Ave",
+  "phone_number": "(607) 319-4119",
+  "reviews": [
+    "I tried the Curry bowl and it was pretty good. They gave a big portion (definitely enough for 1-2 people), and it really hit the spot.",
+    "This was my fourth time coming here. I always get the Veggie Ramen since I'm a vegetarian and I love having something with soup.",
+    "Overall not bad ramen (will be interested to try some of the other menu items here).",
+    "This was an unexpected gem in college town where Wendy's used to be. The udon was simple and delicious with great noodles and fresh kombu and savory hon dashi broth that tasted home made rather than instant.",
+    "I lived in Japan years ago and this feels like the bowl my neighbor would make for our craft group: nice and filling but not gourmet, yet I grew to crave it!"
+  ]
+}

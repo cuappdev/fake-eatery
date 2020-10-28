@@ -1,0 +1,18 @@
+{
+  "id": 7,
+  "name": "Jack's Grill",
+  "category": ["Burgers", "Sports Bars", "Breakfast & Brunch"],
+  "open_time": "10:00AM",
+  "close_time": "11:00PM",
+  "rating": 2.5,
+  "photo": "https://s3-media0.fl.yelpcdn.com/bphoto/4zumZ65UcKCyLD2TJPUk-g/l.jpg",
+  "address": "120 Dryden Rd",
+  "phone_number": "(607) 256-5225",
+  "reviews": [
+    "I'm not sure what people are complaining about when it comes to staff and customer service - everyone there has been friendly in my experience, and I went my entire four years as a Cornell student very regularly.",
+    "Given current conditions and economic struggles of many in the hospitality / restaurant industry, I'm 100% understanding of how Jack's might not have the typical inventory of ingredients.",
+    "Horrible service- honestly expected more customer service and understanding but no.",
+    "So they charged our credit card 2 additional times for single order. Returned to the establishment after reviewing online bank statement and alerted staff of the error.",
+    "Visited to take advantage of the BOGO Frosty deal they were offering. Didn't like the set up -- you order on a computer screen and there are no people regularly at the counter to speak with you."
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "id": 2,
+  "name": "Chatty Cathy Coffee & Juice Press",
+  "category": ["Coffee & Tea", "Juice Bars & Smoothies", "Acai Bowls"],
+  "open_time": "8:00AM",
+  "close_time": "4:00PM",
+  "rating": 4.5,
+  "photo": "https://s3-media0.fl.yelpcdn.com/bphoto/fPPC6xaIeactDmuSmvTN3w/l.jpg",
+  "address": "307 Eddy St",
+  "phone_number": "(607) 319-4176",
+  "reviews": [
+    "Cute little spot in collegetown. We're talking tiny, but more cozy than cramped and it actually works for the type of place it is.",
+    "I feel like açaí bowls are a rare commodity in upstate NY, so I always enjoy going to places that serve them.",
+    "I had never tried one before this place so it was nice to try something new. I recommend if you are looking for something new.",
+    "The coffee was terrible in my case. Probably not all the stuff knows how to prepare an espresso drink."
+  ]
+}

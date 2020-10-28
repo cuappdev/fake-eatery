@@ -1,0 +1,18 @@
+{
+  "id": 4,
+  "name": "College Town Pizza",
+  "category": ["Pizza"],
+  "open_time": "1:00PM",
+  "close_time": "12:00AM",
+  "rating": 2.5,
+  "photo": "https://i2.wp.com/cornellsun.com/wp-content/uploads/2018/02/NINES-A.jpg?fit=1170%2C779co",
+  "address": "139 Dryden Rd",
+  "phone_number": "(607) 272-7500",
+  "reviews": [
+    "The pizza is good, but be warned if you are ordering take-out with certain toppings.",
+    "They touched my food with dirty hands. Rude and unprofessional. The food is alright but the service and remarkably heinous due to their incompetent employees. Would not go again.",
+    "Yesterday I had pizza at Zachary's in Berkeley and it was ok. Today I had pizza here and it was amazing.",
+    "Worst pizza I've ever had.",
+    "I've never been quite a big fan of CTP, but their service and product are both so horrific that I've decided that putting up with it is not worth it."
+  ]
+}

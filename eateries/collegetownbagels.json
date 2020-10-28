@@ -1,0 +1,18 @@
+{
+  "id": 3,
+  "name": "Collegetown Bagels",
+  "category": ["Bagels", "Sandwiches", "Coffee & Tea"],
+  "open_time": "6:00AM",
+  "close_time": "10:00PM",
+  "rating": 4,
+  "photo": "https://bloximages.chicago2.vip.townnews.com/ithaca.com/content/tncms/assets/v3/editorial/b/7c/b7cf83a8-d4aa-11e9-b291-af739bda99cc/5d7916110d015.image.jpg?crop=1567%2C1175%2C98%2C0&resize=1567%2C1175&order=crop%2Cresize",
+  "address": "420 College Ave",
+  "phone_number": "(607) 273-0982",
+  "reviews": [
+    "I guess this place only makes sense if you are used to coming here. Otherwise, you're left to guess what to do. For those of you equally confused as I was, youll need to walk to the back of the restaurant to order.",
+    "Sandwiches were pretty good, but we went at 10:30 am on a Friday and they only had salt bagels left...bagels is in their name.",
+    "All the staff is so unpleasant and unkind. Food is always cold or messed up when you get it.",
+    "My best friend went to Cornell and for years I have heard her profess her love for Collegetown Bagels. Well, she was RIGHT!!",
+    "Really delicious! Their menu has so many options, and the drinks they create include local landmarks and are so unique."
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "id": 0,
+  "name": "Apollo Restaurant",
+  "category": ["Chinese"],
+  "open_time": "10:00AM",
+  "close_time": "11:00PM",
+  "rating": 3,
+  "photo": "https://www.visitithaca.com/sites/default/files/styles/max_300/public/2020-07/943-1_086b799d-5056-a36a-095e462f34fa9ba5.jpg?itok=ACSbKhrm",
+  "address": "407 College Ave",
+  "phone_number": "(607) 272-1188",
+  "reviews": [
+    "Great place for readily accessible, cheap Chinese food!! Go for the spicy dishes if you can take it (see my photo).",
+    "The food is average at best (though the portions for the price ($10 for rice with three items) were fairly generous.  My General Tso's chicken was dry and did not have much flavor, a pattern repeated with the rest of my food.",
+    "Our ToGo restaurant in C Town. There are classics and surprises everyday. saucy but tasty!",
+    "Fast food restaurant on par with Chinese university campus canteens. Could be pretty handy when the weather is bad since it is right there in the college town.",
+    "A lot of my fellow Cornellians really don't like how the food is but I think its amazing. Their sirloin over rice seriously hits the spot. I honestly love coming here."
+  ]
+}
