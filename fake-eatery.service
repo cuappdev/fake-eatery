@@ -1,0 +1,12 @@
+[Unit]
+Description=Fake eatery server for iOS course
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+ExecStart=/fake-eatery
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=default.target

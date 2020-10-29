@@ -2,8 +2,6 @@ use std::{fs, io, path::Path};
 
 use actix_web::{get, middleware, post, web, App, HttpResponse, HttpServer, Responder};
 use serde::{Deserialize, Serialize};
-use std::fs::File;
-use std::io::Read;
 
 #[derive(Serialize, Deserialize, Clone)]
 struct ExpandedEatery {
@@ -23,12 +21,11 @@ impl ExpandedEatery {
     fn get_all<P: AsRef<Path>>(path: P) -> Result<Vec<Self>, io::Error> {
         Ok(fs::read_dir(path)?
             .map(|f| {
-                let mut contents = String::new();
-                File::open(f?.path())?.read_to_string(&mut contents)?;
-                serde_json::from_str::<ExpandedEatery>(&contents)//.unwrap_or(Err(io::Error::new(io::ErrorKind::InvalidData, "bad json")))
+                let contents = fs::read_to_string(f?.path())?;
+                serde_json::from_str::<ExpandedEatery>(&contents)
                     .map_err(|_| io::Error::new(io::ErrorKind::InvalidData, "bad json"))
             })
-            .filter_map(|e| e.ok())
+            .filter_map(Result::ok)
             .collect())
     }
 }
@@ -118,4 +115,12 @@ async fn main() -> std::io::Result<()> {
     .bind("127.0.0.1:8080")?
     .run()
     .await
+}
+
+#[cfg(test)]
+mod tests {
+    #[test]
+    fn test_echo() {
+        assert_eq!(1 + 1, 2);
+    }
 }

@@ -547,6 +547,7 @@ dependencies = [
 name = "fake-eatery"
 version = "0.1.0"
 dependencies = [
+ "actix-rt",
  "actix-web",
  "serde",
  "serde_json",
