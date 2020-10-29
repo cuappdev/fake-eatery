@@ -30,7 +30,7 @@ impl ExpandedEatery {
     }
 }
 
-#[derive(Serialize)]
+#[derive(Serialize, Deserialize)]
 struct BasicEatery {
     id: usize,
     name: String,
@@ -59,7 +59,7 @@ impl From<ExpandedEatery> for BasicEatery {
     }
 }
 
-#[derive(Serialize)]
+#[derive(Serialize, Deserialize)]
 struct EateryList {
     restaurants: Vec<BasicEatery>,
 }
@@ -86,9 +86,14 @@ async fn eateries(eateries: web::Data<Vec<ExpandedEatery>>) -> impl Responder {
     HttpResponse::Ok().json(EateryList { restaurants: ret })
 }
 
-#[get("/eateries/{id}/")]
+#[derive(Serialize, Deserialize)]
+struct EateryReq {
+    id: usize,
+}
+
+#[post("/eatery/")]
 async fn eatery(
-    web::Path(id): web::Path<usize>,
+    web::Json(EateryReq { id }): web::Json<EateryReq>,
     eateries_vec: web::Data<Vec<ExpandedEatery>>,
 ) -> impl Responder {
     let ret = eateries_vec.get_ref().iter().find(|e| e.id == id);
@@ -99,18 +104,21 @@ async fn eatery(
     }
 }
 
+fn eatery_config(cfg: &mut web::ServiceConfig) {
+    let mut eateries_vec = ExpandedEatery::get_all("./eateries").unwrap();
+    eateries_vec.sort_by_key(|e| e.id);
+
+    cfg.data(eateries_vec).service(eateries).service(eatery);
+}
+
 #[actix_web::main]
 async fn main() -> std::io::Result<()> {
     HttpServer::new(|| {
-        let eateries_vec = ExpandedEatery::get_all("./eateries").unwrap();
-
         App::new()
             .wrap(middleware::NormalizePath::default())
-            .data(eateries_vec)
             .service(hello)
             .service(echo)
-            .service(eateries)
-            .service(eatery)
+            .configure(eatery_config)
     })
     .bind("127.0.0.1:8080")?
     .run()
@@ -119,8 +127,77 @@ async fn main() -> std::io::Result<()> {
 
 #[cfg(test)]
 mod tests {
-    #[test]
-    fn test_echo() {
-        assert_eq!(1 + 1, 2);
+    use crate::{eatery_config, EateryList, EateryReq, ExpandedEatery};
+    use actix_web::{middleware, test, App};
+
+    #[actix_rt::test]
+    async fn test_eateries() {
+        let mut app = test::init_service(
+            App::new()
+                .wrap(middleware::NormalizePath::default())
+                .configure(eatery_config),
+        )
+        .await;
+        let req = test::TestRequest::get().uri("/eateries").to_request();
+        let res = test::call_service(&mut app, req).await;
+        assert!(res.status().is_success());
+        let l: EateryList = test::read_body_json(res).await;
+        assert_eq!(l.restaurants.len(), 10);
+    }
+
+    #[actix_rt::test]
+    async fn test_eatery() {
+        let mut app = test::init_service(
+            App::new()
+                .wrap(middleware::NormalizePath::default())
+                .configure(eatery_config),
+        )
+        .await;
+
+        for id in 0..10 {
+            let req = test::TestRequest::post()
+                .uri("/eatery")
+                .set_json(&EateryReq { id })
+                .to_request();
+            let res = test::call_service(&mut app, req).await;
+            assert!(res.status().is_success());
+            let e: ExpandedEatery = test::read_body_json(res).await;
+            assert_eq!(e.id, id);
+        }
+    }
+
+    #[actix_rt::test]
+    async fn test_together() {
+        let mut app = test::init_service(
+            App::new()
+                .wrap(middleware::NormalizePath::default())
+                .configure(eatery_config),
+        )
+        .await;
+
+        let req = test::TestRequest::get().uri("/eateries").to_request();
+        let res = test::call_service(&mut app, req).await;
+        assert!(res.status().is_success());
+        let l: EateryList = test::read_body_json(res).await;
+        assert_eq!(l.restaurants.len(), 10);
+
+        for be in l.restaurants {
+            let req = test::TestRequest::post()
+                .uri("/eatery")
+                .set_json(&EateryReq { id: be.id })
+                .to_request();
+            let res = test::call_service(&mut app, req).await;
+            assert!(res.status().is_success());
+            let e: ExpandedEatery = test::read_body_json(res).await;
+            assert_eq!(e.id, be.id);
+            assert_eq!(e.phone_number, be.phone_number);
+            assert_eq!(e.address, be.address);
+            assert_eq!(e.photo, be.photo);
+            assert_eq!(e.open_time, be.open_time);
+            assert_eq!(e.close_time, be.close_time);
+            assert_eq!(e.rating, be.rating);
+            assert_eq!(e.category, be.category);
+            assert_eq!(e.name, be.name);
+        }
     }
 }
