@@ -30,7 +30,7 @@ impl ExpandedEatery {
     }
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Clone)]
 struct BasicEatery {
     id: usize,
     name: String,
@@ -104,11 +104,39 @@ async fn eatery(
     }
 }
 
+#[derive(Deserialize)]
+struct SearchQuery {
+    name: String,
+}
+
+#[get("/eateries/search/")]
+async fn search(
+    web::Query(SearchQuery { name }): web::Query<SearchQuery>,
+    eateries_vec: web::Data<Vec<ExpandedEatery>>,
+) -> impl Responder {
+    let s = name.to_lowercase();
+
+    let results = eateries_vec
+        .get_ref()
+        .iter()
+        .filter(|e| e.name.to_lowercase().contains(&s))
+        .cloned()
+        .map(BasicEatery::from)
+        .collect::<Vec<_>>();
+
+    HttpResponse::Ok().json(EateryList {
+        restaurants: results.clone(),
+    })
+}
+
 fn eatery_config(cfg: &mut web::ServiceConfig) {
     let mut eateries_vec = ExpandedEatery::get_all("./eateries").unwrap();
     eateries_vec.sort_by_key(|e| e.id);
 
-    cfg.data(eateries_vec).service(eateries).service(eatery);
+    cfg.data(eateries_vec)
+        .service(eateries)
+        .service(eatery)
+        .service(search);
 }
 
 #[actix_web::main]
@@ -199,5 +227,39 @@ mod tests {
             assert_eq!(e.category, be.category);
             assert_eq!(e.name, be.name);
         }
+    }
+
+    #[actix_rt::test]
+    async fn test_search() {
+        let mut app = test::init_service(
+            App::new()
+                .wrap(middleware::NormalizePath::default())
+                .configure(eatery_config),
+        )
+        .await;
+
+        let req = test::TestRequest::get()
+            .uri("/eateries/search/?name=c")
+            .to_request();
+
+        let res = test::call_service(&mut app, req).await;
+        let l: EateryList = test::read_body_json(res).await;
+        assert_eq!(l.restaurants.len(), 4);
+
+        let req = test::TestRequest::get()
+            .uri("/eateries/search/?name=xyz")
+            .to_request();
+
+        let res = test::call_service(&mut app, req).await;
+        let l: EateryList = test::read_body_json(res).await;
+        assert_eq!(l.restaurants.len(), 0);
+
+        let req = test::TestRequest::get()
+            .uri("/eateries/search/?name=college")
+            .to_request();
+
+        let res = test::call_service(&mut app, req).await;
+        let l: EateryList = test::read_body_json(res).await;
+        assert_eq!(l.restaurants.len(), 2);
     }
 }
